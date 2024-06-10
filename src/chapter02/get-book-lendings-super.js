@@ -1,7 +1,7 @@
 class Library {
     static getBookLendings(libraryData, userId, memberId) {
-        if(Usermanagement.isLibrarian(libraryData.userManagement, userId) ||
-           Usermanagement.isSuperMember(libraryData.userManagement, userId)) {
+        if(UserManagement.isLibrarian(libraryData.userManagement, userId) ||
+           UserManagement.isSuperMember(libraryData.userManagement, userId)) {
             return Catalog.getBookLendings(libraryData.catalog, memberId);
         } else {
             throw "Not allowed to get book lendings"; // <1>
